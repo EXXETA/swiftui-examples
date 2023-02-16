@@ -9,7 +9,7 @@ struct AnimatableTitle: View {
     let isAppeared: Bool
     
     var body: some View {
-        Text("Learning: Do a\nSwiftUI tutorial")
+        Text(Texts.title)
             .animatableSystemFont(size: isAppeared ? 32 : 16, weight: .bold)
             .fixedSize(horizontal: false, vertical: true)
             .frame(maxWidth: .infinity, alignment: .leading)

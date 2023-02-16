@@ -35,9 +35,9 @@ struct Card: View {
                     .matchedGeometryEffect(id: AnimationId.titleId, in: animation, anchor: .center)
                     .padding(.bottom, Dimens.unit6)
                 HStack(spacing: Dimens.unit12) {
-                    AnimatableLabels(isAppeared: isAppeared, text: "10 Points")
+                    AnimatableLabels(isAppeared: isAppeared, text: Texts.points)
                         .matchedGeometryEffect(id: AnimationId.label1Id, in: animation)
-                    AnimatableLabels(isAppeared: isAppeared, text: "Clarification")
+                    AnimatableLabels(isAppeared: isAppeared, text: Texts.category)
                         .matchedGeometryEffect(id: AnimationId.label2Id, in: animation)
                 }
             }

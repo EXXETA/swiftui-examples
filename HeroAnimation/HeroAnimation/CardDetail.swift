@@ -26,7 +26,7 @@ struct CardDetail: View {
                         .frame(height: Dimens.cardDetailImageHeight)
                         .padding(.vertical, 2*Dimens.unit24)
                     Spacer()
-                        .frame(height: UIScreen.main.bounds.height - Dimens.cardImageHeight + Dimens.unit24)
+                        .frame(height: UIScreen.main.bounds.height - Dimens.cardImageHeight + 2*Dimens.unit24)
                 }
                 .frame(width: UIScreen.main.bounds.width)
                 .background(
@@ -40,13 +40,13 @@ struct CardDetail: View {
                         .matchedGeometryEffect(id: AnimationId.titleId, in: animation)
                         .padding(.bottom, Dimens.unit16)
                     HStack(spacing: Dimens.unit12) {
-                        AnimatableLabels(isAppeared: isAppeared, text: "10 Points")
+                        AnimatableLabels(isAppeared: isAppeared, text: Texts.points)
                             .matchedGeometryEffect(id: AnimationId.label1Id, in: animation)
-                        AnimatableLabels(isAppeared: isAppeared, text: "Clarification")
+                        AnimatableLabels(isAppeared: isAppeared, text: Texts.category)
                             .matchedGeometryEffect(id: AnimationId.label2Id, in: animation)
                     }
                     .padding(.bottom, Dimens.unit24)
-                    Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+                    Text(Texts.content)
                         .opacity(animateText ? 1 : 0)
                 }
                 .padding(Dimens.unit24)
