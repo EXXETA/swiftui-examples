@@ -67,7 +67,7 @@ Shows the main view an image, button and text. It will also display the lottie a
 
 ### `Constants`
 
-Containts the files `Dimens` (defines sizes), `Strings` (defines strings) and `ImageNames` (defines image names).
+Contains the files `Dimens` (defines sizes), `Strings` (defines strings) and `ImageNames` (defines image names).
 
 ### `Ressources`
 
