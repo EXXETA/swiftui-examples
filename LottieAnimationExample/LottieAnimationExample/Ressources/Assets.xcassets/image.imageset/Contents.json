@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "pexels-iván-cisneros-14086443.jpg",
+      "filename" : "pexels-iván-cisneros-14086443@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "pexels-iván-cisneros-14086443 1.jpg",
+      "filename" : "pexels-iván-cisneros-14086443@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "pexels-iván-cisneros-14086443 2.jpg",
+      "filename" : "pexels-iván-cisneros-14086443@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -63,7 +63,11 @@ The project was tested for iPhone 14 for the iOS Version 17. You need at least t
 
 ### `ContentView`
 
-Shows the main view an image, button and text. It will also display the lottie animation
+Shows the main view an image, button and text. It will also display the lottie animation.
+
+### `Constants`
+
+Containts the files `Dimens` (defines sizes), `Strings` (defines strings) and `ImageNames` (defines image names).
 
 ### `Ressources`
 

@@ -13,28 +13,28 @@ struct ContentView: View {
 	@State private var playbackMode: LottiePlaybackMode = LottiePlaybackMode.paused
 
 	/// Body
-    var body: some View {
+	var body: some View {
 		VStack(alignment: .leading) {
 			ZStack {
 				/// Image
-				Image("image")
+				Image(ImageNames.displayedImage)
 					.resizable()
-					.frame(height: UIScreen.main.bounds.width)
+					.frame(height: Dimens.imageHeight)
 					.scaledToFit()
-					.opacity(playbackMode != .paused ? 0.5 : 1)
+					.opacity(playbackMode != .paused ? Dimens.opacity05 : Dimens.opacity1)
 					.animation(.linear, value: playbackMode)
 				/// LottieView
-				LottieView(animation: .named("heartAnimation"))
+				LottieView(animation: .named(ImageNames.heartAnimation))
 					.playbackMode(playbackMode)
 					.animationDidFinish { completed in
 						/// Change the playback mode to paused, when animation is finished
 						playbackMode = LottiePlaybackMode.paused
 					}
 					.resizable()
-				    /// Define the offset according to the playback mode and pair it with an animation modifier to animate the offset
-					.offset(y: playbackMode != .paused ? 0 : -UIScreen.main.bounds.height)
+					/// Define the offset according to the playback mode and pair it with an animation modifier to animate the offset
+					.offset(y: playbackMode != .paused ? Dimens.offSet0 : Dimens.offSetFull)
 					.animation(.spring, value: playbackMode)
-					.frame(height: UIScreen.main.bounds.width - 100)
+					.frame(height: Dimens.animationHeight)
 			}
 			Spacer()
 			Button(action: {
@@ -42,23 +42,23 @@ struct ContentView: View {
 				playbackMode = .playing(.fromProgress(0, toProgress: 1, loopMode: .playOnce))
 			}, label: {
 				HStack {
-					Text("Like Image")
+					Text(Strings.imageButtonTitle)
 						.foregroundStyle(.white)
-					Image(systemName: "heart")
+					Image(systemName: ImageNames.likeImage)
 						.foregroundStyle(.white)
 				}
-				.padding(16)
+				.padding(Dimens.padding16)
 				.background(
-					RoundedRectangle(cornerRadius: 16)
+					RoundedRectangle(cornerRadius: Dimens.cornerRadius)
 						.fill(Color.black)
 				)
 			})
-			Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+			Text(Strings.imageDescription)
 				.foregroundStyle(.white)
-				.padding(16)
+				.padding(Dimens.padding16)
 			Spacer()
-        }
+		}
 		.background(.black)
 		.edgesIgnoringSafeArea(.all)
-    }
+	}
 }
