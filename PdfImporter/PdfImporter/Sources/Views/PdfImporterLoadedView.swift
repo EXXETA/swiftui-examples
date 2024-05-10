@@ -11,7 +11,7 @@ import PDFKit
 /// A View which shows the loaded pdf  with a bottomsheet
 struct PdfImporterLoadedView: View {
 	// MARK: - Public Properties
-	/// Is disabled
+	///Selected PDF from import
 	let selectedPdf: PDFDocument
 	/// BackToFileImportAction
 	let backToFileImportAction: () -> Void
