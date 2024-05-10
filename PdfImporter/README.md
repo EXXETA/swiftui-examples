@@ -29,3 +29,11 @@ Contains the defined custom errors.
 ## Example
 
 The main view `PdfImporterView` is controlled by it's view model. The view model holds  a published variable pdfImporterState, which controls which state is the current state of the import. By this published variable it can be decided which view to show. 
+
+## Errors
+
+The project implements two error cases: 
+1. Error when something went wrong while importing 
+2. An additional error, when the PDF has too many pages
+
+Those are example errors and you can define many more errors to set your own requirements for importing PDFs.
