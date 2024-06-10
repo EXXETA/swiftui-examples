@@ -30,7 +30,7 @@ struct EmptyPdfImporterView: View {
 				.multilineTextAlignment(.center)
 			Spacer()
 			Button(
-				Texts.backtToFileImportButtonTitle,
+				Texts.backToFileImportButtonTitle,
 				action: backToFileImportAction
 			)
 			.buttonStyle(.borderedProminent)

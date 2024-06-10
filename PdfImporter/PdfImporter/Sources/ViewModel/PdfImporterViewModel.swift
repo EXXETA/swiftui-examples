@@ -57,45 +57,40 @@ class PdfImporterViewModel: ObservableObject {
 	// MARK: - Public Functions
 	/// Pdf was selected, set state to loading, import PDF and check given requirements
 	public func pdfWasSelected(result: Result<URL, Error>) {
+		pdfImporterState = .loading
 		/// Load pdf in background
-		DispatchQueue.global(qos: .background).async { [weak self] in
-			guard let self else { return }
-			/// Make UI changes on main thread
-			DispatchQueue.main.async { [weak self] in
-				self?.pdfImporterState = .loading
-			}
-			switch result {
-				case .success(let url):
+		switch result {
+			case .success(let url):
+				Task {
+					/// Check Secuirty
 					guard
 						url.startAccessingSecurityScopedResource(),
 						let pdfDocument = PDFDocument(url: url)
 					else {
 						/// startAccessingSecurityScopedResource returns false e.g. when trying to upload virus
-						DispatchQueue.main.async { [weak self] in
-							self?.pdfImporterState = .error(PDFImportError())
-						}
 						url.stopAccessingSecurityScopedResource()
+						Task.detached { @MainActor in
+							self.pdfImporterState = .error(PDFImportError())
+						}
 						return
 					}
 
 					/// Check if limit of 20 pages is not exceeded
 					guard pdfDocument.pageCount <= self.pdfPageLimit else {
-						DispatchQueue.main.async { [weak self] in
-							self?.pdfImporterState = .error(PDFPageLimitError())
+						Task.detached { @MainActor in
+							self.pdfImporterState = .error(PDFPageLimitError())
 						}
 						return
 					}
 
-					DispatchQueue.main.async { [weak self] in
-						self?.pdfImporterState = .loaded(pdfDocument)
+					Task.detached { @MainActor in
+						self.pdfImporterState = .loaded(pdfDocument)
 					}
 					url.stopAccessingSecurityScopedResource()
-				case .failure:
-					/// Error from apple fileimporter (corrupt files for e.g.)
-					DispatchQueue.main.async { [weak self] in
-						self?.pdfImporterState = .error(PDFImportError())
-					}
-			}
+				}
+			case .failure:
+				/// Error from apple fileimporter (corrupt files for e.g.)
+				pdfImporterState = .error(PDFImportError())
 		}
 	}
 

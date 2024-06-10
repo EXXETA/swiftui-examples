@@ -11,7 +11,7 @@ import Foundation
 enum Texts {
 	static let emptyPdfTitle = "No PDF selected"
 	static let emptyPdfDescription = "You did not select a PDF click on the button to import a pdf"
-	static let backtToFileImportButtonTitle = "Back to file import"
+	static let backToFileImportButtonTitle = "Back to file import"
 	static let importAnotherPdf = "Import another PDF"
 	static let loadingPdf = "Your selected PDF is being loaded"
 	static let importErrorTitle = "PDF could not be imported"
