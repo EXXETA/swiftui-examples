@@ -28,7 +28,7 @@ Contains the defined custom errors.
 
 ## Example
 
-The main view `PdfImporterView` is controlled by it's view model. The view model holds  a published variable pdfImporterState, which controls which state is the current state of the import. By this published variable it can be decided which view to show. 
+The main view `PdfImporterView` is controlled by it's view model. The view model holds a published variable pdfImporterState, which controls which state is the current state of the import. By this published variable it can be decided which view to show. 
 
 ## Errors
 
