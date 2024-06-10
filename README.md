@@ -2,7 +2,7 @@
 
 ## Description 
 
-This is a collection of interesting SwiftUI example projects, which we created for our [medium blog](https://medium.com/@mobile_44538). Here you can find detailed examples of our code, which we like to share with you. 
+This is a collection of interesting SwiftUI example projects, which we created for our [medium blog](https://medium.com/@mobileatexxeta). Here you can find detailed examples of our code, which we like to share with you. 
 
 ## About us 
 
