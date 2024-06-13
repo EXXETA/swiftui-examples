@@ -4,6 +4,9 @@
 
 This project shows an example of how to use the file importer in SwiftUI and reflecting different states by an enum.
 
+![Gif of file importer](./ReadMeResources/GifWithDevices.gif "Gif of file importer")
+
+
 ## How to use the project 
 
 The project was tested for iPhone SE for the iOS Version 17. You need at least the Xcode version 15 to use the project. 
